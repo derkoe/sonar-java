@@ -1,5 +1,7 @@
 package javax.annotation;
+
 import org.apache.commons.lang.BooleanUtils;
+import java.util.stream.Stream;
 
 @interface CheckForNull{}
 
@@ -36,5 +38,14 @@ class B {
   @CheckForNull
   public java.lang.Boolean myMethod() {
     return null; // compliant method is annotated with @CheckForNull
+  }
+}
+
+class C {
+  public Boolean foo() {
+    Stream.of("A").forEach(a -> {
+      return;
+    });
+    return true;
   }
 }
